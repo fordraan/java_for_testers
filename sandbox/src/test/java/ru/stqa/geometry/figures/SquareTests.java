@@ -9,7 +9,10 @@ public class SquareTests {
     void canCalculateArea() {
         var s = new Square(5.0);
         double result = s.area();
-        Assertions.assertEquals(25, result);
+      //  Assertions.assertEquals(25, result);
+        if (!(result == 25.0)){
+            throw new AssertionError (String.format ("Expected %f actual % f", 25.0, result));
+        }
     }
 
     @Test
@@ -28,5 +31,17 @@ public class SquareTests {
     void canCalculateTrianglePerimeter() {
         Assertions.assertEquals(15.0, new Triangle(7.0, 5.0, 3.0).perimeter());
     }
+
+    @Test
+    void cannotCreateSquareWithNegativeSide() {
+        try {
+            new Square(-5.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception){
+            //ok
+
+        }
+    }
+
 
 }

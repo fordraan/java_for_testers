@@ -9,6 +9,21 @@ public record Triangle (
 )
 
 {
+    public Triangle {
+
+        if (a < 0 || b < 0 || c < 0 ) {
+            throw new IllegalArgumentException("Rectangle side should be non-negative");
+        }
+        if ((a + b) < c || (a + c ) < b || (b + c) < a ){
+            throw new IllegalArgumentException("Sum of any two sides of a triangle should be less than third side");
+        }
+
+
+    }
+
+
+
+
     public double area() {
         return sqrt (perimeter()/2 * (perimeter()/2 - this.a)  *  (perimeter() / 2 - this.b) *  (perimeter() / 2 - this.c) );
     }
