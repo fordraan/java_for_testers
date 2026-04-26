@@ -73,4 +73,47 @@ public class TriangleTests {
         }
     }
 
+    @Test
+    void testEquality(){
+        var r1 = new Triangle (3.0, 4.0,5.0);
+        var r2 = new  Triangle (3.0, 4.0, 5.0);
+        Assertions.assertEquals(r1, r2);
+    }
+
+    @Test
+    void testEquality2(){
+        var r2 = new  Triangle (3.0, 5.0, 4.0);
+        var r3 = new  Triangle (4.0, 3.0, 5.0);
+        Assertions.assertEquals(r2, r3);
+    }
+    @Test
+    void testEquality3(){
+        var r3 = new  Triangle (4.0, 3.0, 5.0);
+        var r4 = new  Triangle (4.0, 5.0, 3.0);
+         Assertions.assertEquals(r3, r4);
+    }
+    @Test
+    void testEquality4(){
+        var r4 = new  Triangle (4.0, 5.0, 3.0);
+        var r5 = new  Triangle (5.0, 3.0, 4.0);
+         Assertions.assertEquals(r4, r5);
+    }
+    @Test
+    void testEquality5(){
+        var r5 = new  Triangle (5.0, 3.0, 4.0);
+        var r6 = new  Triangle (5.0, 4.0, 3.0);
+        Assertions.assertEquals(r5, r6);
+    }
+    @Test
+    void testEquality6(){
+        var r6 = new  Triangle (5.0, 4.0, 3.0);
+        var r1 = new Triangle (3.0, 4.0,5.0);
+        Assertions.assertEquals(r6, r1);
+    }
+
+
+
+
+
+
 }
