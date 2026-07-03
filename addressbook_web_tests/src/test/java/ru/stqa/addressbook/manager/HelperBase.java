@@ -21,4 +21,6 @@ public class HelperBase {
         manager.driver.findElement(locator).sendKeys(text);
     }
 
+
+
 }

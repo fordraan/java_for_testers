@@ -5,9 +5,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 
 public class ApplicationManager {
 
@@ -17,15 +15,15 @@ public class ApplicationManager {
 
     public GroupHelper groups;
 
+    public ContactHelper contacts;
+
     public void init(String browser) {
         if (driver == null) {
-            if ("firefox".equals(browser)) {
+            if ("firefox".equals(browser)){
                 driver = new FirefoxDriver();
-            } else if ("chrome".equals(browser)) {
-                driver = new ChromeDriver();
-            } else if ("edge".equals(browser)) {
-                driver = new  EdgeDriver();
-            }   else {
+            } else if ("chrome".equals(browser)){
+                    driver = new ChromeDriver();
+            } else{
                 throw new IllegalArgumentException(String.format("Unknown browser %s", browser));
             }
 
@@ -37,18 +35,28 @@ public class ApplicationManager {
     }
 
     public LoginHelper session() {
-        if (session == null) {
+        if (session == null){
             session = new LoginHelper(this);
         }
         return session;
     }
 
-    public GroupHelper groups() {
-        if (groups == null) {
+    public GroupHelper groups(){
+        if (groups == null){
             groups = new GroupHelper(this);
         }
         return groups;
     }
+
+    public ContactHelper contacts(){
+        if (contacts == null){
+            contacts = new ContactHelper(this);
+        }
+        return contacts;
+    }
+
+
+
 
     public boolean IsElementPresent(By locator) {
         try {
@@ -58,5 +66,7 @@ public class ApplicationManager {
             return false;
         }
     }
+
+
 
 }
