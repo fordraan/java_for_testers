@@ -87,5 +87,6 @@ public class ContactHelper extends HelperBase {
 
         }
     }
+    // Задание 7 и Задание 8    
 
 }

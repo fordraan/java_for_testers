@@ -107,5 +107,6 @@ public class ContactCreationTests extends TestBase{
                                                                       "test", "test", "test", "test", "test"));
 
     }
+    // Задание 7 и Задание 8
 
 }

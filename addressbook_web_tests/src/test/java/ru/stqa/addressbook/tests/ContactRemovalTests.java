@@ -17,5 +17,6 @@ public class ContactRemovalTests extends TestBase {
         app.contacts().removeContact();
 
     }
+    // Задание 7 и Задание 8
 
 }

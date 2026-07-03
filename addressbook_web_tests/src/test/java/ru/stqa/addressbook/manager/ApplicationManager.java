@@ -71,6 +71,6 @@ public class ApplicationManager {
         }
     }
 
-
+// Задание 7 и Задание 8
 
 }
